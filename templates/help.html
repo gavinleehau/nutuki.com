@@ -1,0 +1,61 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height3">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption3 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">Help center</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="{% static '' %}assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <!-- Slider Area End -->
+    <!-- ask questions -->
+    <section class="ask-questions section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-9 col-md-10 ">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 text-center mb-90">
+                        <h2>Câu hỏi thường gặp</h2>
+                        <p>Bạn có vấn đề thắc mắc hoặc câu hỏi cần giải đáp. Đừng ngần ngại hãy liên hệ với chúng tôi ngay để được tư vấn và giải đáp thắc mắc.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for question in questions %}
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-question  single-question2 d-flex mb-50">
+                            <span> Q.</span>
+                            <div class="pera">
+                                <h2>{{question.question}}</h2>
+                                <p>{{question.answer|safe}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-xl-12 ">
+                    <div class="more-btn text-center mt-20">
+                        <a href="{% url 'contact'%}" class="btn">Liên hệ tư vấn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End ask questions -->
+</main>
+{% endblock %}

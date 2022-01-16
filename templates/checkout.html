@@ -1,0 +1,112 @@
+{% extends "homebase.html" %}
+{% load humanize %}
+{% load static %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height3">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption3 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">Đăng Ký Tư Vấn</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" style="margin: 8vh 0;">
+            <div id="info-student" class="col-sm-6">
+                <div class="order-head">
+                    <h3 class="text-center text-lg-left">Đăng kí tư vấn website</h3>
+                </div>
+                <div class="form-contact order-body">
+                    <form action="" method="POST">
+                      {% csrf_token %}
+                        <div class="form-group">
+                            <label for="client_name">Họ và tên</label>
+                            <input type="text" class="form-control" id="client_name" name="name" required="required"  placeholder="Họ và tên..">
+                        </div>
+                        <div class="form-group">
+                            <label for="client_email">Email</label>
+                            <input type="email" class="form-control" id="client_email" name="email" required="required" placeholder="Email..">
+                        </div>
+                        <div class="form-group">
+                            <label for="client_tel">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="client_tel" name="phone" required="required" placeholder="Số điện thoại..">
+                        </div>
+                        <div class="form-group">
+                            <label for="client_tel">Nội dung cần tư vấn</label>
+                            <textarea class="form-control" name="message" id="" cols="30" rows="10" placeholder="Nội dung cần tư vấn.."></textarea>
+                        </div>
+                        <button class="btn" type="submit">Gửi</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="info-cart" class="col-sm-6">
+
+                <div class="order-head">
+                    <h3 class="text-center text-lg-left">Mô tả gói website</h3>
+                </div>
+                <div class="order-body">
+                    {{web_detail.descriptions|safe}}
+                </div>
+
+                <div class="order-body" style="margin-top: 5vh;">
+                    <p class="summary">Gói website đã chọn</p>
+                    <ul class="list-course-order">
+                        <li class="item-order mb-3">
+                            <div class="course-name" style="font-size: 19px;">{{web_detail.name}}</div>
+                            <div class="fee">{{web_detail.pricing|intcomma}} ₫
+                                <!-- <a href="" class="d-block badge badge-primary">Xóa</a> -->
+                            </div>
+                        </li>                                                      
+                    </ul>
+                    <p class="total-order">
+                        <span class="">Thành tiền:</span>
+                        <span class="total-payment">{{web_detail.pricing|intcomma}} ₫</span>
+                    </p>
+                </div>
+                <p class="text-muted py-3" style="padding-top: 2rem!important;">Chú ý: Bạn đang trong tiến trình đăng ký tư vấn website, sau khi nhập thông tin cá nhân bạn sẽ nhận được email xác nhận. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất. Xin cảm ơn rất nhiều</p>
+            </div>
+
+
+            <!-- <div id="info-cart" class="col-sm-12">
+                <div class="order-head">
+                    <h3 class="text-center text-lg-left">Gói website đã chọn</h3>
+                </div>
+                <div class="order-body">
+                    <p class="summary">Gói website đã chọn</p>
+                    <ul class="list-course-order">
+                        <li class="item-order mb-3">
+                            <div class="course-name" style="font-size: 19px;">{{web_detail.name}}</div>
+                            <div class="fee">{{web_detail.pricing}} ₫
+                                
+                            </div>
+                        </li>                                                      
+                    </ul>
+                    <p class="total-order">
+                        <span class="">Thành tiền:</span>
+                        <span class="total-payment">{{web_detail.pricing}} ₫</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-5"></div> -->
+            <!-- <div class="col-sm-7" style="margin-top: 3vh;">
+                <input type="submit" class="btn btn-primary" value="Tôi đăng ký">
+                <button class="btn" type="submit">Gửi</button>
+            </div> -->
+        </div>
+    </div>
+</main>
+{% endblock %}

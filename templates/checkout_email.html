@@ -1,0 +1,67 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height3">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption3 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">ĐĂNG KÝ GOOGLE WORKSPACE</h1>
+                            <p>Nutuki – đại lý chính thức của Google tại Việt Nam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <div class="main-email" style="margin: 15vh 0;">
+        <div class="container">
+            <div class="row" style="margin: 8vh 0;">
+                <div id="info-student" class="col-sm-6">
+                    <div class="order-head">
+                        <h3 class="text-center text-lg-left">ĐĂNG KÝ GOOGLE WORKSPACE</h3>
+                    </div>
+                    <div class="form-contact order-body">
+                        <form action="" method="POST">
+                          {% csrf_token %}
+                            <div class="form-group">
+                                <label for="client_name">Tên miền đăng ký Google Workspace *</label>
+                                <input type="text" class="form-control" id="client_name" name="name_domain" required="required"  placeholder="Tên miền đăng ký">
+                            </div>
+                            <div class="form-group">
+                                <label for="client_email">Thời hạn *</label>
+                                <select name="used_time" class="form-control">
+                                    <option value="12 tháng">12 tháng</option>
+                                    <option value="24 tháng">24 tháng</option>
+                                    <option value="36 tháng">36 tháng</option>
+                                    <option value="48 tháng">48 tháng</option>
+                                    <option value="60 tháng">60 tháng</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="client_tel">Số lượng người dùng *</label>
+                                <input type="tel" class="form-control" id="client_tel" name="number_of_users" required="required" placeholder="Số lượng người dùng">
+                            </div>
+                            <button class="btn" type="submit">Đăng ký</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-6" style="margin-top: 10vh;">
+                    <img src="{% static '' %}assets/img/logo/ggworkspace.jpg" alt="" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</main>
+{% endblock %}

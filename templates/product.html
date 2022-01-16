@@ -1,0 +1,83 @@
+{% extends "homebase.html" %}
+{% load static  %}
+{% load humanize %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height2">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption2 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s" style="font-size: 40px;">BẢNG GIÁ THIẾT KẾ WEBSITE TRỌN GÓI</h1>
+                            <p data-animation="fadeInLeft" data-delay=".8s">Bảng giá dưới đây với mục đích cho khách hàng tham khảo. Sau khi chúng tôi liên hệ tư vấn, trao đổi với khách hàng sẽ có báo giá chi tiết cụ thể.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="{% static '' %}assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <!-- Slider Area End -->
+    <!--? Pricing Card Start -->
+    <section class="pricing-card-area pricing-card-area2 fix">
+        <div class="container">
+            <div class="row">
+                {% for website in websites %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                        <div class="single-card text-center mb-30">
+                            <div class="card-top">
+                                <img src="{% static '' %}assets/img/icon/price1.svg" alt="">
+                                <h4>{{website.name}}</h4>
+                                <p>Starting at</p>
+                            </div>
+                            <div class="card-mid">
+                                <h4><span style="font-size: 23px;text-decoration: line-through;">{{website.old_pricing|intcomma}}</span><span>đ </span> <span>/ năm</span></h4>
+                                <h4>{{website.pricing|intcomma}}<span style="font-size: 16px;">đ </span> <span>/ năm</span></h4>
+                            </div>
+                            <div class="card-bottom">
+                                <ul>
+                                    {% if website.storage == '1_GB' %}
+                                        <li>Dung lượng: 1 GB</li>
+                                    {% elif website.storage == '500_MB' %}
+                                        <li>Dung lượng: 500 MB</li>
+                                    {% elif website.storage == '2_GB' %}
+                                        <li>Dung lượng: 2 GB</li>
+                                    {% elif website.storage == '5_GB' %}
+                                        <li>Dung lượng: 5 GB</li>
+                                    {% endif %}
+                                    
+                                    <li>{{website.bandwidth}}</li>
+
+                                    {% if website.freeDomain == 'Yes' %}
+                                        <li>Miễn phí domain 1 năm</li>
+                                    {% elif website.freeDomain == 'No' %}
+                                        <li>Không miễn phí domain</li>
+                                    {% endif %}
+
+                                    {% if website.template == 'Theo mẫu' %}
+                                        <li>Giao diện website <span style="font-weight: bold;">{{website.template}} </span></li>
+                                    {% elif website.template == 'Theo yêu cầu' %}
+                                        <li>Giao diện website <span style="font-weight: bold;">{{website.template}} </span></li>
+                                    {% endif %}
+                                    <li>Tối ưu hiển thị trên nhiều thiết bị</li>
+                                    <li>Bàn giao mã nguồn (Source Code)</li>
+                                </ul>
+                                <a href="{% url 'checkout' website_id=website.id %}" class="borders-btn">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                
+            </div>
+        </div>
+    </section>
+    
+</main>
+{% endblock %}

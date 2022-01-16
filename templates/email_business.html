@@ -1,0 +1,90 @@
+{% extends "homebase.html" %}
+{% load static  %}
+{% load humanize %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height2">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption2 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">Bảng giá Google Workspace</h1>
+                            <p data-animation="fadeInLeft" data-delay=".8s">Google Workspace nhằm mang lại một diện mạo mới cho dòng sản phẩm chủ đạo hướng tới khách hàng doanh nghiệp. Về cơ bản sản phẩm vẫn kế thừa toàn bộ các tính năng của bộ công cụ G Suite, tên gọi được thay đổi và cải tiến một số yếu tố nhằm phù hợp hơn với nhu cầu khách hàng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="{% static '' %}assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <!-- Slider Area End -->
+    <!--? Pricing Card Start -->
+    <section class="pricing-card-area pricing-card-area2 fix">
+        <div class="container">
+            <div class="row">
+                {% for email in email_business %}
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-10">
+                        <div class="single-card text-center mb-30" style="height: 150vh;">
+                            <div class="card-top">
+                                <img src="{% static '' %}assets/img/icon/mail.png" alt="">
+                                <h4>{{email.name}}</h4>
+                                <p>Starting at</p>
+                            </div>
+                            <div class="card-mid">
+                                <!-- <h4><span style="font-size: 23px;text-decoration: line-through;">{{website.pricing|intcomma}}</span><span>đ </span> <span>/ năm</span></h4> -->
+                                <h4><span style="font-size: 23px;text-decoration: line-through;">{{email.old_pricing|intcomma}}</span><span style="font-size: 16px;">đ </span><span>/ năm</span></h4>
+                                <h4>{{email.pricing|intcomma}}<span style="font-size: 16px;">đ </span><span>/ năm</span></h4>
+                            </div>
+                            <div class="card-bottom" style="border-bottom: 1px solid #E7E6EB; padding-bottom: 5vh; padding-left: 3vh;text-align: left;">
+                                <ul>
+                                    {% if email.storage == '30_GB' %}
+                                        <!-- <li><span style="font-weight: bold;">Dung lượng:</span> 30 GB</li> -->
+                                        <!-- <li><span style="font-weight: bold;">20 user đầu tiên: </span>99.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">21 user trở lên: </span>138.600đ/user/tháng</li>
+                                        <li style="margin-bottom: 142px;"><span style="font-weight: bold;">Số lượng user giới hạn:</span> 1 - 300</li> -->
+                                    {% elif email.storage == '2_TB' %}
+                                        <!-- <li><span style="font-weight: bold;">Dung lượng:</span> 2 TB</li> -->
+                                        <!-- <li><span style="font-weight: bold;">20 user đầu tiên: </span>225.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">21 user trở lên: </span>285.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">Đăng ký <5 user: </span>dung lượng 1TB/user</li>
+                                        <li style="margin-bottom: 71px;"><span style="font-weight: bold;">Số lượng user giới hạn:</span> 1 - 300</li> -->
+                                    {% elif email.storage == '5_TB' %}
+                                        <!-- <li><span style="font-weight: bold;">Dung lượng:</span> 5 TB</li> -->
+                                        <!-- <li><span style="font-weight: bold;">20 user đầu tiên: </span>415.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">21 user trở lên: </span>415.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">Đăng ký <5 user: </span>dung lượng 1TB/user</li>
+                                        <li style="margin-bottom: 71px;"><span style="font-weight: bold;">Số lượng user giới hạn:</span> 1 - 300</li> -->
+                                    {% elif email.storage == 'Unlimited' %}
+                                        <!-- <li><span style="font-weight: bold;">Dung lượng:</span> Không giới hạn</li> -->
+                                        <!-- <li><span style="font-weight: bold;">20 user đầu tiên: </span>460.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">21 user trở lên: </span>460.000đ/user/tháng</li>
+                                        <li><span style="font-weight: bold;">Đăng ký <5 user: </span>dung lượng 1TB/user</li>
+                                        <li style="margin-bottom: 70px;"><span style="font-weight: bold;">Số lượng user:</span> không giới hạn</li> -->
+                                    {% endif %}
+
+                                    <!-- {% if email.shareDrive == 'Yes' %}
+                                        <li style="margin-bottom: 10vh;">Có chia sẻ nhóm</li>
+                                    {% elif email.shareDrive == 'No' %}
+                                        <li style="margin-bottom: 10vh;">Không chia sẻ nhóm</li>
+                                    {% endif %} -->
+                                </ul>
+                                <a href="{% url 'checkout_email' email_id=email.id %}" class="borders-btn">Đăng ký</a>
+                            </div>
+                            <div class="descriptions" style="text-align: left; padding: 0 3vh; text-align: left;">
+                                {{email.descriptions|safe}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+</main>
+{% endblock %}

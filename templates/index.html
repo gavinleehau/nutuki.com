@@ -1,0 +1,387 @@
+{% extends "homebase.html" %}
+{% load static  %}
+{% load humanize %}
+{% block main %}
+<main>
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider d-flex align-items-center slider-height ">
+                <div class="container">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-xl-5 col-lg-5 col-md-9 ">
+                            <div class="hero__caption">
+                            <span data-animation="fadeInLeft" data-delay=".3s">{{heros.title}}</span>
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">{{heros.subTitle}}</h1>
+                            <p data-animation="fadeInLeft" data-delay=".8s">{{heros.content}}</p>
+                            <!-- Slider btn -->
+                            <div class="slider-btns">
+                                <!-- Hero-btn -->
+                                <a href="{% url 'product'%}" data-animation="fadeInLeft" data-delay="1s" href="industries.html" class="btn radius-btn">get started</a>
+                            </div>
+                        </div>
+                            
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="hero__img d-none d-lg-block f-right">
+                                <img src="{% static '' %}assets/img/hero/hero_right.png" alt="" data-animation="fadeInRight" data-delay="1s">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="{% static '' %}assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    <div class="domain-search-area section-bg1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-5">
+                    <h2>Tìm kiếm tên miền</h2>
+                    <p>Nhập tên miền bạn muốn kiểm tra vào ô tìm kiêm</p>
+                </div>
+                <div class="col-xl-8 col-lg-7">
+                <!--Hero form -->
+                <form action="#" class="search-box">
+                    <div class="input-form">
+                        <input type="text" placeholder="Nhập tên miền bạn muốn tìm kiếm">
+                        <!-- icon search -->
+                        <div class="search-form">
+                            <button><i class="ti-search"></i></button>
+                        </div>
+                        <!-- icon search -->
+                        <div class="world-form">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                </form>	
+                <!-- Domain List -->
+                <div class="single-domain pt-30 pb-30">
+                    <ul>
+                        <li><span>.com</span> <p>220.000 <sup>đ</sup></p></li>
+                        <li><span>.net</span> <p>300.000 <sup>đ</sup></p></li>
+                        <li><span>.vn</span> <p>600.000 <sup>đ</sup></p></li>
+                        <li><span>.info</span> <p>350.000 <sup>đ</sup></p></li>
+                    </ul>
+                </div>
+                <!-- Domain List  End-->
+            </div>
+        </div>
+    </div>
+    </div>
+
+<section class="team-area section-padding40 section-bg1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12">
+                <div class="section-tittle text-center mb-105">
+                    <h2>VÌ SAO NÊN CHỌN CHÚNG TÔI?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services1.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Phân khúc khách hàng</a></h5>
+                        <p>Nutuki hướng tới những khách hàng, doanh nghiệp trên mọi ngành nghề, lĩnh vực với quy mô vừa và nhỏ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services2.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Bảo mật cao với Django</a></h5>
+                        <p>Django bảo vệ các website khỏi những lỗ hổng về tấn công mạng như tấn công SQL injection, Cross-site Scripting, clickjacking,...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services3.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Giao diện đẹp và đa dạng</a></h5>
+                        <p>Nutuki có hơn 500 giao diện đẹp phù hợp với mọi ngành nghề, lĩnh vực khác nhau.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services4.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Băng thông không giới hạn</a></h5>
+                        <p>Nutuki cung cấp hosting với tốc độ load web nhanh, băng thông không giới hạn và an toàn.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services5.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Hỗ trợ nhanh chóng 24/7</a></h5>
+                        <p>Hỗ trợ đăng bài, chăm sóc website, khắc phục các lỗi web trong quá trình sử dụng.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="single-cat">
+                    <div class="cat-icon">
+                        <img src="{% static '' %}assets/img/icon/services6.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a>Email doanh nghiệp hàng đầu</a></h5>
+                        <p>Nutuki là đại lý của <span style="font-weight: bold;">Google Workspace</span>, khả năng tích hợp mạnh mẽ, tối ưu mã hóa dữ liệu giúp việc gửi nhận mail diễn ra thông suốt, nhanh chóng, an toàn và bảo mật.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="pricing-card-area fix">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8">
+                <div class="section-tittle text-center mb-90">
+                    <h2>BẢNG GIÁ THIẾT KẾ WEBSITE TRỌN GÓI</h2>
+                    <p>Bảng giá dưới đây với mục đích cho khách hàng tham khảo. Sau khi chúng tôi liên hệ tư vấn, trao đổi với khách hàng sẽ có báo giá chi tiết cụ thể.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for website in websites %}
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
+                    <div class="single-card text-center mb-30">
+                        <div class="card-top">
+                            <img src="{% static '' %}assets/img/icon/price1.svg" alt="">
+                            <h4>{{website.name}}</h4>
+                            <p>Starting at</p>
+                        </div>
+                        <div class="card-mid">
+                            <h4><span style="font-size: 23px;text-decoration: line-through;">{{website.old_pricing|intcomma}}</span><span>đ </span> <span>/ năm</span></h4>
+                            <h4>{{website.pricing|intcomma}} <span style="font-size: 16px;">đ </span> <span>/ năm</span></h4>
+                        </div>
+                        <div class="card-bottom">
+                            <ul>
+                                {% if website.storage == '1_GB' %}
+                                    <li>Dung lượng 1 GB</li>
+                                {% elif website.storage == '2_GB' %}
+                                    <li>Dung lượng 2 GB</li>
+                                {% elif website.storage == '5_GB' %}
+                                    <li>Dung lượng 5 GB</li>
+                                {% endif %}
+                                
+                                <li>{{website.bandwidth}}</li>
+
+                                {% if website.freeDomain == 'Yes' %}
+                                    <li>Miễn phí domain 1 năm</li>
+                                {% elif website.freeDomain == 'No' %}
+                                    <li>Không miễn phí domain</li>
+                                {% endif %}
+
+                                {% if website.template == 'Theo mẫu' %}
+                                    <li>Giao diện website <span style="font-weight: bold;">{{website.template}} </span></li>
+                                {% elif website.template == 'Theo yêu cầu' %}
+                                    <li>Giao diện website <span style="font-weight: bold;">{{website.template}} </span></li>
+                                {% endif %}
+                                <li>Tối ưu hiển thị trên nhiều thiết bị</li>
+                                <li>Bàn giao mã nguồn (Source Code)</li>
+                            </ul>
+                            <a href="{% url 'checkout' website_id=website.id %}" class="borders-btn">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+            
+        </div>
+    </div>
+</section>
+<!-- Pricing Card End -->
+<!--? About-1 Area Start -->
+<div class="about-area1 section-padding40">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-10">
+                <!-- about-img -->
+                <div class="about-img ">
+                    <img src="{% static '' %}assets/img/gallery/about1.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-12">
+                <div class="about-caption ">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 mb-30">
+                        <h2>Hỗ trợ tận tâm</h2>
+                    </div>
+                    <p class="mb-40">Bạn quá bận rộn và không thể tự mình chăm sóc website. Đừng lo hãy để chúng tôi hỗ trợ bạn chăm sóc, không còn cần tốn quá nhiều chi phí khi phải thuê nhân viên thiết kế hoặc nhân viên quản lí website, vì tất cả đã có chúng tôi hỗ trợ.</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Tiết kiệm thời gian</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Tiết kiệm chi phí</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Hỗ trợ nhanh chóng, tận tình</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Website nâng cao giá trị thương hiệu và tăng trưởng online</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About-1 Area End -->
+<!--? About-2 Area Start -->
+<div class="about-area1 pb-bottom">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-xl-7 col-lg-7 col-md-12">
+                <div class="about-caption about-caption3 mb-50">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 mb-30">
+                        <h2>Bảo mật cao với Django</h2>
+                    </div>
+                    <p class="mb-40">Bảo mật cũng là một ưu tiên hàng đầu của Django. Django  có một trong những hệ thống bảo mật hiện có tốt nhất và giúp các nhà phát triển tránh các vấn đề bảo mật và các cuộc tấn công mạng.</p>
+                    <ul class="mb-30">
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Cross site scripting (XSS) protection</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Cross site request forgery (CSRF) protection</p>
+                        </li>
+                        
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Clickjacking protection</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>SQL injection protection</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>Host header validation</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" style="color: #36c536; margin-right: 13px; font-size: 25px;"></i>
+                            <p>SSL/HTTPS</p>
+                        </li>
+                        
+                    </ul>
+                    <a href="#" class="btn"><i class="fas fa-phone-alt"></i>{{info.phoneNumber}}</a>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-10">
+                <!-- about-img -->
+                <div class="about-img ">
+                    <img src="{% static '' %}assets/img/gallery/about2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About-2 Area End -->
+<!-- ask questions -->
+<section class="ask-questions section-bg1 section-padding30 fix">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-9 col-md-10 ">
+                <!-- Section Tittle -->
+                <div class="section-tittle text-center mb-90">
+                    <h2>Câu hỏi thường gặp</h2>
+                    <p>Bạn có vấn đề thắc mắc hoặc câu hỏi cần giải đáp. Đừng ngần ngại hãy liên hệ với chúng tôi ngay để được tư vấn và giải đáp thắc mắc.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for question in questions %}
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-question d-flex mb-50">
+                        <span> Q.</span>
+                        <div class="pera">
+                            <h2>{{question.question}}</h2>
+                            <p>{{question.answer|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-xl-12 ">
+                <div class="more-btn text-center mt-20">
+                    <a href="{% url 'contact'%}" class="btn">Liên hệ tư vấn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End ask questions -->
+<!--? Testimonial Area Start -->
+<section class="testimonial-area section-bg1">    
+    <div class="container" >   
+        <div class="testimonial-wrapper">
+            <div class="row align-items-center justify-content-center">
+                <div class=" col-lg-10 col-md-12 col-sm-11">
+                    <!-- Testimonial Start -->
+                    <div class="h1-testimonial-active">
+                        <!-- Single Testimonial -->
+                        {% for feedback in feedbacks %}
+                            <div class="single-testimonial text-center mt-55">
+                                <div class="testimonial-caption">
+                                    <img src="{% static '' %}assets/img/icon/quotes-sign.png" alt="" class="quotes-sign">
+                                    <p>{{feedback.feedback|safe}}</p>
+                                </div>
+
+                                <!-- founder -->
+                                <div class="testimonial-founder d-flex align-items-center justify-content-center">
+                                    <div class="founder-img">
+                                        <!-- <img src="{{ feedback.user.oser.image }}" alt="" width="68" height="68" style="border-radius: 50%;">  -->
+                                    </div>
+                                    <div class="founder-text">
+                                        <span>- {{feedback.user}} -</span>
+                                        <!-- <p>Đã sử dụng dịch vụ tại nutuki.com</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    <!-- Testimonial End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--? Testimonial Area End -->
+</main>
+{% endblock %}

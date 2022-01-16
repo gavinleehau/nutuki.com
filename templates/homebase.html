@@ -1,0 +1,264 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Hosting | Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="{% static '' %}site.webmanifest">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static '' %}assets/img/favicon.ico">
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{% static '' %}assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/slicknav.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/flaticon.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/progressbar_barfiller.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/gijgo.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/animate.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/animated-headline.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/themify-icons.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/slick.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/nice-select.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/style.css">
+    </head>
+    <body>
+        <!-- ? Preloader Start -->
+        <div id="preloader-active">
+            <div class="preloader d-flex align-items-center justify-content-center">
+                <div class="preloader-inner position-relative">
+                    <div class="preloader-circle"></div>
+                    <div class="preloader-img pere-text">
+                        <img src="{% static '' %}assets/img/logo/dalaticon.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader Start -->
+        <header>
+            <!-- Header Start -->
+            <div class="header-area header-transparent">
+                <div class="main-header ">
+                    <div class="header-bottom  header-sticky">
+                        <div class="container-fluid">
+                            <div class="row align-items-center">
+                                <!-- Logo -->
+                                <div class="col-xl-2 col-lg-2">
+                                    <div class="logo">
+                                        <a href="{% url 'home'%}"><img src="{% static '' %}assets/img/logo/logo_nutuki.png" alt="" width="287px"></a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-10 col-lg-10">
+                                    <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                        <!-- Main-menu -->
+                                        <div class="main-menu d-none d-lg-block">
+                                            <nav>
+                                                <ul id="navigation">
+                                                    <li class="active" ><a href="{% url 'home'%}">Trang chủ</a></li>
+                                                    <li>
+                                                        <a href="#nutuki">Dịch vụ</a>
+                                                        <ul class="submenu">
+                                                            <li><a href="{% url 'product'%}">Website</a></li>
+                                                            <li><a href="{% url 'email_business'%}">Email Doanh Nghiệp</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="{% url 'help'%}">Trợ giúp</a></li>
+                                                    <li><a href="{% url 'blogs'%}">Blog</a></li>
+                                                    <li><a href="{% url 'contact'%}">Liên hệ</a></li>
+                                                    <!-- <li><a href="{% url 'about'%}">Giới thiệu</a></li> -->
+
+                                                    <!-- Button -->
+                                                    {% if user.id is not None %}
+                                                        <li class="button-header margin-left "><a href="{% url 'userpage' %}" class="btn" style="padding: 9px 22px !important;"><img src="{{ user.userprofile.image.url }}" alt="" width="30" style="border-radius: 50%;"> {{user.username}}</a></li>
+                                                        <li >
+                                                            <a href="#" ><i class="fas fa-caret-down"></i></a>
+                                                            <ul class="submenu" style="left: -27vh; margin-top: -1vh;">
+                                                                <li><a href="{% url 'userpage'%}">Trang cá nhân</a></li>
+                                                                <li><a href="{% url 'updateUser'%}">Cập nhật thông tin</a></li>
+                                                                <li><a href="{% url 'logout'%}">Đăng xuất</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    {% else %}
+                                                        <li class="button-header margin-left "><a href="{% url 'register' %}" class="btn">Đăng ký</a></li>
+                                                        <li ><a href="{% url 'login' %}">Đăng nhập</a></li>
+                                                    {% endif %}
+                                                    
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mobile Menu -->
+                                <div class="col-12">
+                                    <div class="mobile_menu d-block d-lg-none"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header End -->
+        </header>
+        {% block main %}
+        
+        {% endblock %}
+        <footer>
+            <div class="footer-wrappr " data-background="{% static '' %}assets/img/gallery/footer-bg.png">
+            <div class="footer-area footer-padding ">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo mb-25">
+                                    <a href="{% url 'home' %}"><img src="{% static '' %}assets/img/logo/logo_nutuki.png" alt="" style="width: 30vh;"></a>
+                                </div>
+                                <div class="footer-tittle mb-50">
+                                    <p>Đăng kí để nhận những thông tin mới nhất về dịch vụ của chúng tôi.</p>
+                                </div>
+                                <!-- Form -->
+                                <div class="footer-form">
+                                    <div id="mc_embed_signup">
+                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                            <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
+                                            <div class="form-icon">
+                                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                Subscribe
+                                                </button>
+                                            </div>
+                                            <div class="mt-10 info"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- social -->
+                                <div class="footer-social mt-50">
+                                    <a href="#nutuki"><i class="fab fa-twitter"></i></a>
+                                    <a href="#nutuki"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#nutuki"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Menu</h4>
+                                    <ul>
+                                        <li><a href="{% url 'product'%}">Website</a></li>
+                                        <li><a href="{% url 'email_business'%}">Email Doanh Nghiệp</a></li>
+                                        <li><a href="{% url 'help'%}">Trợ giúp</a></li>
+                                        <li><a href="{% url 'blogs'%}">Blog</a></li>
+                                        <li><a href="{% url 'contact'%}">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-4 col-sm-5">
+                            <!-- <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Products</h4>
+                                    <ul>
+                                        <li><a href="#">Why choose us</a></li>
+                                        <li><a href="#"> Review</a></li>
+                                        <li><a href="#">Customers</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Carrier</a></li>
+                                    </ul>
+                                </div>
+                                </div> -->
+                        </div>
+                        <div class="col-xl-3 col-lg-2 col-md-4 col-sm-5">
+                            <div class="footer-tittle">
+                                <h4>Thông Tin Liên Hệ</h4>
+                                <div class="media contact-info" style="margin-bottom: 20px;">
+                                    <span style="color: white;" class="contact-info__icon"><i class="ti-home"></i></span>
+                                    <div class="media-body">
+                                        <h3 style="color: white;margin-bottom: 4px;">{{info.location}}</h3>
+                                        <p>{{info.address}}</p>
+                                    </div>
+                                </div>
+                                <div class="media contact-info" style="margin-bottom: 20px;">
+                                    <span style="color: white;" class="contact-info__icon"><i class="ti-tablet"></i></span>
+                                    <div class="media-body">
+                                        <h3 style="color: white;margin-bottom: 4px;">{{info.phoneNumber}}</h3>
+                                        <p>Làm việc 24/7</p>
+                                    </div>
+                                </div>
+                                <div class="media contact-info" style="margin-bottom: 20px;">
+                                    <span style="color: white;" class="contact-info__icon"><i class="ti-email"></i></span>
+                                    <div class="media-body">
+                                        <h3 style="color: white;margin-bottom: 4px;">{{info.email}}</h3>
+                                        <p>Hỗ trợ khách hàng 24/7</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer-bottom area -->
+                <div class="footer-bottom-area">
+                    <div class="container">
+                        <div class="footer-border">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="footer-copy-right text-center">
+                                        <p>
+                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Website made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://nutuki.com" target="_blank">Nutuki</a>
+                                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll Up -->
+        <div id="back-top" >
+            <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+        </div>
+        <!-- JS here -->
+        <script src="{% static '' %}./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        <!-- Jquery, Popper, Bootstrap -->
+        <script src="{% static '' %}./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="{% static '' %}./assets/js/popper.min.js"></script>
+        <script src="{% static '' %}./assets/js/bootstrap.min.js"></script>
+        <!-- Jquery Mobile Menu -->
+        <script src="{% static '' %}./assets/js/jquery.slicknav.min.js"></script>
+        <!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static '' %}./assets/js/owl.carousel.min.js"></script>
+        <script src="{% static '' %}./assets/js/slick.min.js"></script>
+        <!-- One Page, Animated-HeadLin -->
+        <script src="{% static '' %}./assets/js/wow.min.js"></script>
+        <script src="{% static '' %}./assets/js/animated.headline.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.magnific-popup.js"></script>
+        <!-- Date Picker -->
+        <script src="{% static '' %}./assets/js/gijgo.min.js"></script>
+        <!-- Video bg -->
+        <script src="{% static '' %}./assets/js/jquery.vide.js"></script>
+        <!-- Nice-select, sticky -->
+        <script src="{% static '' %}./assets/js/jquery.nice-select.min.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.sticky.js"></script>
+        <!-- Progress -->
+        <script src="{% static '' %}./assets/js/jquery.barfiller.js"></script>
+        <!-- counter , waypoint,Hover Direction -->
+        <script src="{% static '' %}./assets/js/jquery.counterup.min.js"></script>
+        <script src="{% static '' %}./assets/js/waypoints.min.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.countdown.min.js"></script>
+        <script src="{% static '' %}./assets/js/hover-direction-snake.min.js"></script>
+        <!-- contact js -->
+        <script src="{% static '' %}./assets/js/contact.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.form.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.validate.min.js"></script>
+        <script src="{% static '' %}./assets/js/mail-script.js"></script>
+        <script src="{% static '' %}./assets/js/jquery.ajaxchimp.min.js"></script>
+        <!-- Jquery Plugins, main Jquery -->    
+        <script src="{% static '' %}./assets/js/plugins.js"></script>
+        <script src="{% static '' %}./assets/js/main.js"></script>
+    </body>
+</html>

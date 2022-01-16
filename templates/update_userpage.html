@@ -1,0 +1,95 @@
+{% extends "homebase.html" %}
+{% load static %}
+{% block main %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
+    <link rel="stylesheet" href="{% static '' %}assets/css/user_style.css">
+
+</head>
+<body class="profile-page">
+
+    <!-- Slider Area Start-->
+    <div class="slider-area slider-bg ">
+        <!-- Single Slider -->
+        <div class="single-slider d-flex align-items-center slider-height3">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-8 col-lg-9 col-md-12 ">
+                        <div class="hero__caption hero__caption3 text-center">
+                            <h1 data-animation="fadeInLeft" data-delay=".6s ">Update User Page</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        <!-- Slider Shape -->
+        <div class="slider-shape d-none d-lg-block">
+            <img class="slider-shape1" src="{% static '' %}assets/img/hero/top-left-shape.png" alt="">
+        </div>
+    </div>
+    
+    
+    <div class="main main-raised">
+        <div class="profile-content" style="height: 105vh;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto">
+                        <div class="profile">
+                            {% if user.id is not None %}
+                                <div class="avatar">
+                                    <img src="{{ user.userprofile.image.url }}" alt="Circle Image" class="img-raised rounded-circle" width="160" height="160">
+                                </div>
+                                <div class="name">
+                                    <h3 class="title">{{user.username}}</h3>
+                                    <h3 style="margin-top: -3vh; margin-bottom: 3vh;">{{user.email}}</h3>
+                                    <!-- <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a> -->
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="description text-center">
+                    <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                </div> -->
+
+                <div class="container">
+                    <div class="col-md-6 offset-md-3">
+                        <form method="POST" enctype="multipart/form-data" >
+                            {% csrf_token %}
+                            {% for field in profile_form %}
+                                <div class="form-group" >
+                                    <label for="">{{ field.label }}</label>
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <!-- {{ profile_form.as_p  }} -->
+
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <div class="profile">
+                                    <button type="submit" class="button button-contactForm boxed-btn">Cập nhật</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- <footer class="footer text-center ">
+        <p>Made with <a href="https://demos.creative-tim.com/material-kit/index.html" target="_blank">Material Kit</a> by Creative Tim</p>
+    </footer> -->
+
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="{% static '' %}./assets/js/user_style.js"></script>
+</body>
+    
+{% endblock %}
